@@ -1,6 +1,5 @@
 {
   "name": "facedetectionapp",
-  "homepage": "https://aashwin-tripathi.github.io/FaceDetectionApp_FrontEnd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

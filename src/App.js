@@ -7,6 +7,7 @@ import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
 import ParticleBackground from './Components/Background/ParticleBackground';
+import { SERVER_URL } from './constant';
 import './App.css';
 
 
@@ -73,7 +74,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch('https://ztm-face-detection-app-server.herokuapp.com/imageurl', {
+    fetch(`${SERVER_URL}/imageurl`, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -81,7 +82,7 @@ class App extends Component {
       })
     }).then(response => response.json()).then(response => {
       if (response) {
-        fetch('https://ztm-face-detection-app-server.herokuapp.com/image', {
+        fetch(`${SERVER_URL}/image`, {
           method: 'put',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

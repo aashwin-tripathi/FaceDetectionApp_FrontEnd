@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { SERVER_URL } from '../../constant';
 
 class SignIn extends React.Component {
 
@@ -20,7 +20,7 @@ class SignIn extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('https://ztm-face-detection-app-server.herokuapp.com/signin', {
+        fetch(`${SERVER_URL}/signin`, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

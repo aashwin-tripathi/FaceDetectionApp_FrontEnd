@@ -1,4 +1,5 @@
 import React from 'react';
+import { SERVER_URL } from '../../constant';
 
 
 class Register extends React.Component {
@@ -24,7 +25,7 @@ class Register extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('https://ztm-face-detection-app-server.herokuapp.com/register', {
+        fetch(`${SERVER_URL}/register`, {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
